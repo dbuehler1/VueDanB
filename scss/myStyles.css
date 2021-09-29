@@ -1,0 +1,101 @@
+#app {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 2rem;
+  border-radius: 15px;
+  background-color: #343a40;
+  color: black;
+}
+
+#titleBar {
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+body {
+  background-color: #16404f;
+}
+
+.modal-content {
+  background-color: #16404f;
+  color: white;
+  font-weight: bold;
+}
+
+.instructions {
+  color: white;
+}
+
+.enterItems {
+  alignment: top;
+  padding: 1rem;
+  background-color: #343a40;
+  color: #17a2b8;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+.enterItemsHeader {
+  color: #17a2b8;
+  font-weight: bold;
+}
+
+#addContent {
+  alignment: top;
+  margin-right: 0;
+  float: left;
+}
+
+.itemsTable {
+  background-color: white;
+}
+
+.itemsTableHeader {
+  background-color: white;
+  font-weight: bold;
+}
+
+hr {
+  border-width: 3px;
+  background-color: black;
+}
+
+.enterItemsTitle {
+  text-align: center;
+  font-size: 24pt;
+  font-weight: bold;
+  color: #17a2b8;
+  padding: 3px;
+}
+
+.searchTableHeader {
+  color: white;
+}
+
+.deleteItem {
+  alignment: top;
+  margin-right: 0;
+  float: left;
+  color: black;
+  background-color: #17a2b8;
+}
+
+#addItemError {
+  color: red;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+#deleteItemError {
+  color: red;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.searchTableHeader {
+  color: #17a2b8;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=myStyles.css.map */
