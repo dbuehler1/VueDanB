@@ -45,15 +45,7 @@ Vue.component('ListItem', {
             $('#itemCategory').val(this.item.category);
         },
 
-        applyTo(){
-            console.log(this.item);
 
-            app.inventory.indexOf(this.item).name = $('#itemNameLabel').val();
-            // this.item.name = $('#itemNameLabel').val();
-            this.item.qty = $('#itemQty').val();
-            this.item.description = $('#itemDescLabel').val();
-            this.item.category = $('#itemCategory').val();
-        },
         deleteRecord(){
             app.inventory.splice(app.inventory.indexOf(this.item), 1);
         },
@@ -61,7 +53,54 @@ Vue.component('ListItem', {
 
     template: `            
             <div class="itemsTable row">
-            <div class="modal fade" id="changeItemModal" tabindex="-1" role="dialog" aria-labelledby="editItemModal" aria-hidden="true">
+            <my-modal :item="this.item"></my-modal>
+            <div class="col-2">
+                <b-button variant="success" type="button" data-toggle="modal" @click="popModal" data-target="#changeItemModal" title="Add Item">
+                    <i class="far fa-edit"></i>
+                </b-button>
+                <b-button variant="danger" @click="deleteRecord" type="button" >
+                    <i class="fas fa-trash-alt"></i>
+                </b-button>
+                
+            </div>
+            <div class="col-3">
+                {{ item.name }}
+            </div>
+            <div class="col-2">
+            {{ item.category }}
+            </div>
+            <div class="col-4">
+            {{ item.description }}
+            </div>
+            <div class="col-1">
+            {{ item.qty }}
+            </div>
+            
+            <hr>
+            </div>`
+})
+
+Vue.component('MyModal', {
+    props: {
+        item :{
+            type: Object,
+            required: true,
+        }
+    },
+    methods: {
+        applyTo(){
+            console.log(this.item);
+
+
+            this.item.name = $('#itemNameLabel').val();
+            this.item.qty = $('#itemQty').val();
+            this.item.description = $('#itemDescLabel').val();
+            this.item.category = $('#itemCategory').val();
+        },
+    },
+
+
+    template: `<div class="modal fade" id="changeItemModal" tabindex="-1" role="dialog" aria-labelledby="editItemModal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <form>
                 <div class="modal-content">
@@ -93,32 +132,10 @@ Vue.component('ListItem', {
                 </div>
             </form>
         </div>
-    </div>
-            <div class="col-2">
-                <b-button variant="success" type="button" data-toggle="modal" @click="popModal" data-target="#changeItemModal" title="Add Item">
-                    <i class="far fa-edit"></i>
-                </b-button>
-                <b-button variant="danger" @click="deleteRecord" type="button" >
-                    <i class="fas fa-trash-alt"></i>
-                </b-button>
-                
-            </div>
-            <div class="col-3">
-                {{ item.name }}
-            </div>
-            <div class="col-2">
-            {{ item.category }}
-            </div>
-            <div class="col-4">
-            {{ item.description }}
-            </div>
-            <div class="col-1">
-            {{ item.qty }}
-            </div>
-            
-            <hr>
-            </div>`
-})
+    </div>`
+}),
+
+
 Vue.component('SearchList', {
 
     props: {
@@ -175,13 +192,18 @@ Vue.component('SearchListItem', {
 });
 
 Vue.component('EnterInfo', {
+    data: function () {
+        return {
+            newEntry: {
+                name: '',
+                description: '',
+                qty: 1,
+                category: '',
+            },
+        }
+    },
     props: {
-        newEntry: {
-            name: '',
-            description: '',
-            qty: 1,
-            category: '',
-        },
+
 
         items: {
             type: Array,
