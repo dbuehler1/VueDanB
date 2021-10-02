@@ -14,12 +14,25 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="//unpkg.com/bootstrap-vue@2.x/dist/bootstrap-vue.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="scss/myStyles.css">
 </head>
 <body>
 
 <br>
 <div id="app" class="container-fluid col-10">
+
+
+
+
+
+
+
+
+
+
+
+
 
     <b-navbar id="titleBar" toggleable="lg" type="dark" variant="info">
         <b-navbar-brand href="#"><h3>Inventory Manager</h3></b-navbar-brand>
@@ -52,41 +65,30 @@
 
         <div class="col-6"><hr>
             <h3 class="enterItemsHeader">Add Item</h3>
-            <form>
-
-                <div class="enterItems">
-                    <div class="form-group">
-                        <label for="name">Item Name</label>
-                        <input id="name" type="text" class="form-control" v-model="newItem.name">
-                    </div>
-                    <div class="form-group">
-                        <label for="qty">Quantity</label>
-                        <input id="qty" type="number" class="form-control" size="3" v-model="newItem.qty">
-                    </div>
-                    <div class="form-group">
-                        <label for="desc">Description</label>
-                        <input id="desc" type="text" class="form-control" v-model="newItem.description">
-                    </div>
-                    <div class="form-group">
-                        <label for="category">Category</label>
-                        <input id="category" type="text" class="form-control" v-model="newItem.category">
-                    </div>
-                </div>
-                <br>
-                <b-button variant="success" id="addContent" @click="addIt">Add +</b-button><br><br>
-                    <span id="addItemError"></span>
-
-            </form>
+            <enter-info :items="inventory" :new-entry="newItem"></enter-info>
             <br><br><br></div>
 
         <div class="col-6">
             <hr>
             <h3 class="enterItemsHeader">Inventory Roster</h3>
-            <b-table dark striped :items="inventory" class="my-current-inventory">
-                <div>
-
+            <div class="itemsTable row">
+                <div class="col-3">
+                    Name
                 </div>
-            </b-table>
+                <div class="col-3">
+                    Category
+                </div>
+                <div class="col-4">
+                    Description
+                </div>
+                <div class="col-2">
+                    Qty
+                </div>
+
+            </div>
+            <hr>
+            <inventory-list dark striped :items="inventory">
+            </inventory-list>
             <br>
         </div>
     </b-row>
@@ -97,72 +99,20 @@
     <b-row>
         <div class="col-6">
             <hr>
-            <form>
-                <h3 class="enterItemsHeader">Select Existing Item</h3>
-                <div class="instructions">Enter data from the table to delete or make changes (Exact Spelling)</div>
 
-
-                <div class="enterItems">
-                    <div class="form-group">
-                        <label for="nameIdentifier">Item Name</label>
-                        <input id="nameIdentifier" type="text" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="categoryIdentifier">Category</label>
-                        <input id="categoryIdentifier" type="text" class="form-control">
-                    </div>
-                </div>
-                <b-button variant="danger" id="deleteContent" @click="deleteRecord">Delete</b-button>
-                <b-button variant="success" type="button" data-toggle="modal" data-target="#changeItemModal" @click="populateModal" title="Add Item">
-                    <i class="fas fa-plus"></i> Edit
-                </b-button><br><br>
-                <span id="deleteItemError"></span>
-            </form>
 
 
         </div>
         <div class="col-6">
             <hr>
             <h3 class="searchTableHeader"></h3>
-
-            <b-table dark striped :items="searchinventory" class="my-search-inventory"></b-table>
+            <search-list :items="searchinventory" class="my-search-inventory"></search-list>
         </div>
 
 
 
     </b-row>
-    <div class="modal fade" id="changeItemModal" tabindex="-1" role="dialog" aria-labelledby="editItemModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <form>
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editItemModal">Edit Item</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <label for="itemNameLabel">Item Name</label>
-                        <input id="itemNameLabel" type="text" class="form-control">
 
-                        <label for="itemQty">Item Qty</label>
-                        <input id="itemQty" type="text" class="form-control">
-
-                        <label for="itemDescLabel">Item Description</label>
-                        <input id="itemDescLabel" type="text" class="form-control">
-
-                        <label for="itemCategory">Item Category</label>
-                        <input id="itemCategory" type="text" class="form-control">
-
-                    </div>
-                    <div class="modal-footer">
-                        <b-button variant="danger" type="button" data-dismiss="modal">Close</b-button>
-                        <b-button variant="success" type="submit" v-on:click.prevent="applyChanges" data-dismiss="modal">Apply</b-button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
 
 </div>
 
