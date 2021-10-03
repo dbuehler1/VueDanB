@@ -4,6 +4,7 @@ const app = new Vue({
     data: function () {
         return {
             newItem: {
+                itemId: '0',
                 name: '',
                 description: '',
                 qty: 1,
@@ -11,18 +12,19 @@ const app = new Vue({
             },
 
             inventory: [
-                {name: 'IPhone', qty: 1, description: ' Mobile Apple Product', category: 'Device'},
-                {name: 'Doritos', qty: 10, description: 'Nacho Cheese', category: 'Snacks'},
-                {name: 'Laptop', qty: 1, description: 'Windows', category: 'Device'},
-                {name: 'Macbook', qty: 2, description: 'MacOS', category: 'Device'},
-                {name: 'gift card', qty: 6, description: '$25', category: 'Currency'},
-                {name: 'cheetos', qty: 16, description: 'white cheddar', category: 'Snacks'},
-                {name: 'Roma Pizza', qty: 15, description: 'Cheese and Sausage', category: 'Meal'},
-                {name: 'Hair Clip', qty: 2, description: '4-pack', category: 'Cosmetics'},
-                {name: 'Green Sewing Thread', qty: 4, description: 'thin', category: 'Material'},
+                {itemId: '1', name: 'IPhone', qty: 1, description: ' Mobile Apple Product', category: 'Device'},
+                {itemId: '2',name: 'Doritos', qty: 10, description: 'Nacho Cheese', category: 'Snacks'},
+                {itemId: '3',name: 'Laptop', qty: 1, description: 'Windows', category: 'Device'},
+                {itemId: '4',name: 'Macbook', qty: 2, description: 'MacOS', category: 'Device'},
+                {itemId: '5',name: 'gift card', qty: 6, description: '$25', category: 'Currency'},
+                {itemId: '6',name: 'cheetos', qty: 16, description: 'white cheddar', category: 'Snacks'},
+                {itemId: '7',name: 'Roma Pizza', qty: 15, description: 'Cheese and Sausage', category: 'Meal'},
+                {itemId: '8',name: 'Hair Clip', qty: 2, description: '4-pack', category: 'Cosmetics'},
+                {itemId: '9',name: 'Green Sewing Thread', qty: 4, description: 'thin', category: 'Material'},
 
             ],
             searchinventory: [],
+
 
         }
     },

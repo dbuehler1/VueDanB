@@ -1,4 +1,9 @@
 Vue.component('InventoryList', {
+    data: function(){
+        return {
+            uid: Math.floor(Math.random() * 10e16),
+        }
+    },
 
     props: {
         name: {
@@ -15,21 +20,20 @@ Vue.component('InventoryList', {
                 <b-list-group>
                     <list-item v-for="(item, i) in items" 
                     :item="item"
-                    :key="item.name"
-                    >
-                    
-</list-item>
+                    :id="item.itemId"
+                    :key="item.itemId">
+                    </list-item>
 
-                </b-list-group>
-                
-                
-                
+                </b-list-group>                                              
             </div>`,
 });
 Vue.component('ListItem', {
 
 
     props: {
+        id: {
+            type: String | Number
+        },
         item: {
             type: Object,
             required: true,
@@ -57,8 +61,8 @@ Vue.component('ListItem', {
     },
 
     template: `            
-            <b-list-group-item>
-            <my-modal :item="item"></my-modal>
+            <b-list-group-item variant="dark">
+            
             <b-row>
             
 
@@ -66,9 +70,10 @@ Vue.component('ListItem', {
             <b-col cols="2">
             
             
-                <b-button variant="success" v-b-modal.modal-1>
+                <b-button variant="success" v-b-modal="id">
                     <i class="far fa-edit"></i>
                 </b-button>
+                <my-modal :item="item" :id="id"></my-modal>
                 <b-button variant="danger" @click="deleteRecord" type="button" >
                     <i class="fas fa-trash-alt"></i>
                 </b-button>
@@ -95,6 +100,10 @@ Vue.component('ListItem', {
 Vue.component('MyModal', {
 
     props: {
+        id: {
+            type: String | Number
+        },
+
         item :{
             type: Object,
             required: true,
@@ -108,12 +117,12 @@ Vue.component('MyModal', {
 
 
             this.item.name = $('#itemNameLabel').val();
-
-
             this.item.qty = $('#itemQty').val();
             this.item.description = $('#itemDescLabel').val();
             this.item.category = $('#itemCategory').val();
+
             console.log(app.inventory);
+            this.hideModal();
         },
         hideModal() {
             this.$refs['my-modal'].hide()
@@ -121,12 +130,12 @@ Vue.component('MyModal', {
     },
 
 
-    template: `<b-modal ref="my-modal" hide-footer id="modal-1">
+    template: `<b-modal ref="my-modal" hide-footer :id="id">
         
             <b-form>
                 
                     
-                        <h5 class="modal-title" id="editItemModal">Edit Item</h5>
+                        
                         <b-button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </b-button>
@@ -138,19 +147,19 @@ Vue.component('MyModal', {
                             
                             <b-form-textarea
                                 id="itemNameLabel"
-                                v-model="item.name"
+                                :value="item.name"
                             ></b-form-textarea>
                             <b-form-textarea
                                 id="itemQty"
-                                v-model="item.qty"
+                                :value="item.qty"
                             ></b-form-textarea>
                             <b-form-textarea
                                 id="itemDescLabel"
-                                v-model="item.description"
+                                :value="item.description"
                             ></b-form-textarea>
                             <b-form-textarea
                                 id="itemCategory"
-                                v-model="item.category"
+                                :value="item.category"
                             ></b-form-textarea>
                         
 
@@ -166,7 +175,7 @@ Vue.component('MyModal', {
                     
                     <div class="modal-footer">
                         <b-button  variant="outline-danger" block @click="hideModal">Close Me</b-button>
-                        <b-button variant="success" type="button" @click="applyTo()" data-dismiss="modal">Apply</b-button>
+                        <b-button variant="success" type="button" block @click="applyTo" data-dismiss="modal">Apply</b-button>
                     </div>
                 
             </b-form>
@@ -188,13 +197,13 @@ Vue.component('SearchList', {
     },
     template: `<div class="my-search-inventory">
                 <h3>{{name}}</h3>
-                <ul  class="list-group list-group-flush">
+                <b-list-group  class="list-group list-group-flush">
                     <search-list-item v-for="(item, i) in items" 
                     :item="item" 
                     :key="item.name"
                     @remove-item="$emit('remove-item', item)"
                     ></search-list-item>
-                </ul>
+                </b-list-group>
             </div>`,
 });
 Vue.component('SearchListItem', {
@@ -212,28 +221,31 @@ Vue.component('SearchListItem', {
     methods: {},
 
     template: `
-            <div class="itemsTable row">
-            <div class="col-3">
+<b-list-group-item variant="dark">
+            <b-row>
+            <b-col cols="3">
                 {{ item.name }}
-            </div>
-            <div class="col-3">
+            </b-col>
+            <b-col cols="3">
             {{ item.category }}
-            </div>
-            <div class="col-4">
+            </b-col>
+            <b-col cols="4">
             {{ item.description }}
-            </div>
-            <div class="col-2">
+            </b-col>
+            <b-col cols="2">
             {{ item.qty }}
-            </div>
+            </b-col>
             
             <hr>
-            </div>`
+            </b-row>
+</b-list-group-item>`
 });
 
 Vue.component('EnterInfo', {
     data: function () {
         return {
             newEntry: {
+                itemId: '0',
                 name: '',
                 description: '',
                 qty: 1,
@@ -251,9 +263,11 @@ Vue.component('EnterInfo', {
     },
     methods: {
         addIt: function (e) {
+            this.newEntry.itemId = (this.items.length + 1) + '';
             this.items.push(this.newEntry);
 
             this.newEntry = {
+                itemId: '0',
                 name: '',
                 description: '',
                 qty: 1,
