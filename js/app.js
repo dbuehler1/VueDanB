@@ -82,11 +82,7 @@ const app = new Vue({
 
     },
     computed: {
-        // myInventory: function () {
-        //     return this.inventory.filter(function (item) {
-        //         return item;
-        //     });
-        // },
+
 
     },
     // mounted: function() {

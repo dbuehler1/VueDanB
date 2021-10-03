@@ -19,9 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07c4d663-486a-4f2c-a1f6-c8b348c990a1" name="Default Changelist" comment="Updated Version">
+    <list default="true" id="07c4d663-486a-4f2c-a1f6-c8b348c990a1" name="Default Changelist" comment="Separate Modal Component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/app-components.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app-components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +71,7 @@
       <workItem from="1632800593804" duration="27559000" />
       <workItem from="1632895292184" duration="7156000" />
       <workItem from="1632940389369" duration="31508000" />
-      <workItem from="1633201172376" duration="5284000" />
+      <workItem from="1633201172376" duration="12375000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Version">
       <created>1633201364870</created>
@@ -78,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633201364870</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Separate Modal Component">
+      <created>1633211942683</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1633211942683</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,7 +106,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated Version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Version" />
+    <MESSAGE value="Separate Modal Component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Separate Modal Component" />
   </component>
   <component name="WindowStateProjectService">
     <state x="4539" y="1385" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1632687418677">
@@ -120,10 +130,10 @@
       <screen x="3840" y="1063" width="1920" height="1020" />
     </state>
     <state x="4643" y="1284" key="Github.UntrackedFilesDialog/3840.1063.1920.1020/0.0.2560.1400/5760.1236.1920.1040@3840.1063.1920.1020" timestamp="1632901904122" />
-    <state x="6312" y="1489" key="Vcs.Push.Dialog.v2" timestamp="1633201367567">
+    <state x="6312" y="1489" key="Vcs.Push.Dialog.v2" timestamp="1633214094460">
       <screen x="5760" y="1236" width="1920" height="1040" />
     </state>
-    <state x="6312" y="1489" key="Vcs.Push.Dialog.v2/3840.1063.1920.1020/0.0.2560.1400/5760.1236.1920.1040@5760.1236.1920.1040" timestamp="1633201367567" />
+    <state x="6312" y="1489" key="Vcs.Push.Dialog.v2/3840.1063.1920.1020/0.0.2560.1400/5760.1236.1920.1040@5760.1236.1920.1040" timestamp="1633214094460" />
     <state x="4456" y="1298" key="run.anything.popup" timestamp="1633159142969">
       <screen x="3840" y="1063" width="1920" height="1020" />
     </state>

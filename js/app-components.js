@@ -14,18 +14,13 @@ Vue.component('InventoryList', {
                 <ul class="list-group list-group-flush">
                     <list-item v-for="(item, i) in items" 
                     :item="item"
-                    :name="item.name" 
                     :key="item.name"
                     ></list-item>
                 </ul>
             </div>`,
 });
 Vue.component('ListItem', {
-    data: function () {
-        return {
-            uid: Math.floor(Math.random() * 10e16),
-        }
-    },
+
 
     props: {
         item: {
@@ -35,6 +30,7 @@ Vue.component('ListItem', {
     },
     methods: {
         popModal(){
+
             console.log(this.item);
 
             // this.testName = this.item.name;
@@ -63,7 +59,7 @@ Vue.component('ListItem', {
                 </b-button>
                 
             </div>
-            <div class="col-3">
+            <div  class="col-3">
                 {{ item.name }}
             </div>
             <div class="col-2">
@@ -81,6 +77,7 @@ Vue.component('ListItem', {
 })
 
 Vue.component('MyModal', {
+
     props: {
         item :{
             type: Object,
@@ -89,13 +86,17 @@ Vue.component('MyModal', {
     },
     methods: {
         applyTo(){
+
             console.log(this.item);
 
 
-            this.item.name = $('#itemNameLabel').val();
+
+            // this.item.name =
+
             this.item.qty = $('#itemQty').val();
             this.item.description = $('#itemDescLabel').val();
             this.item.category = $('#itemCategory').val();
+            console.log(app.inventory);
         },
     },
 
@@ -127,7 +128,7 @@ Vue.component('MyModal', {
                     </div>
                     <div class="modal-footer">
                         <b-button variant="danger" type="button" data-dismiss="modal">Close</b-button>
-                        <b-button variant="success" type="button" @click="applyTo" data-dismiss="modal">Apply</b-button>
+                        <b-button variant="success" type="button" @click="applyTo()" data-dismiss="modal">Apply</b-button>
                     </div>
                 </div>
             </form>
