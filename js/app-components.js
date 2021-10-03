@@ -61,15 +61,9 @@ Vue.component('ListItem', {
     },
 
     template: `            
-            <b-list-group-item variant="dark">
-            
-            <b-row>
-            
-
-            
-            <b-col cols="2">
-            
-            
+            <b-list-group-item variant="dark">           
+            <b-row>           
+            <b-col cols="2">                        
                 <b-button variant="success" v-b-modal="id">
                     <i class="far fa-edit"></i>
                 </b-button>
@@ -111,11 +105,7 @@ Vue.component('MyModal', {
     },
     methods: {
         applyTo(){
-
             console.log(this.item);
-
-
-
             this.item.name = $('#itemNameLabel').val();
             this.item.qty = $('#itemQty').val();
             this.item.description = $('#itemDescLabel').val();
@@ -129,50 +119,28 @@ Vue.component('MyModal', {
         },
     },
 
-
     template: `<b-modal ref="my-modal" hide-footer :id="id">
-        
-            <b-form>
-                
-                    
-                        
-                        <b-button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </b-button>
-                    
-                    
-<!--                        <label for="itemNameLabel">Item Name</label>-->
-<!--                        <input id="itemNameLabel" type="text" class="form-control">-->
-                        
-                            
+                   <b-form>                       
+                            <label for="itemNameLabel">Name</label>
                             <b-form-textarea
                                 id="itemNameLabel"
                                 :value="item.name"
                             ></b-form-textarea>
+                            <label for="itemQty">Qty</label>
                             <b-form-textarea
                                 id="itemQty"
                                 :value="item.qty"
                             ></b-form-textarea>
+                            <label for="itemDescLabel">Description</label>
                             <b-form-textarea
                                 id="itemDescLabel"
                                 :value="item.description"
                             ></b-form-textarea>
+                            <label for="itemCategory">Category</label>
                             <b-form-textarea
                                 id="itemCategory"
                                 :value="item.category"
-                            ></b-form-textarea>
-                        
-
-<!--                        <label for="itemQty">Item Qty</label>-->
-<!--                        <input id="itemQty" type="text" class="form-control">-->
-
-<!--                        <label for="itemDescLabel">Item Description</label>-->
-<!--                        <input id="itemDescLabel" type="text" class="form-control">-->
-
-<!--                        <label for="itemCategory">Item Category</label>-->
-<!--                        <input id="itemCategory" type="text" class="form-control">-->
-
-                    
+                            ></b-form-textarea>                          
                     <div class="modal-footer">
                         <b-button  variant="outline-danger" block @click="hideModal">Close Me</b-button>
                         <b-button variant="success" type="button" block @click="applyTo" data-dismiss="modal">Apply</b-button>
@@ -263,7 +231,8 @@ Vue.component('EnterInfo', {
     },
     methods: {
         addIt: function (e) {
-            this.newEntry.itemId = (this.items.length + 1) + '';
+            this.newEntry.itemId = (Math.floor(Math.random() * 10e16)) + '';
+            console.log(this.newEntry.itemId);
             this.items.push(this.newEntry);
 
             this.newEntry = {
