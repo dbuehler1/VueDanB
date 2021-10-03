@@ -22,18 +22,6 @@
 <br>
 <div id="app" class="container-fluid col-10">
 
-
-
-
-
-
-
-
-
-
-
-
-
     <b-navbar id="titleBar" toggleable="lg" type="dark" variant="info">
         <b-navbar-brand href="#"><h3>Inventory Manager</h3></b-navbar-brand>
 
@@ -57,12 +45,7 @@
         </b-collapse>
     </b-navbar>
 
-
     <b-row>
-
-
-
-
         <b-col cols="6"><hr>
 
             <h3 class="enterItemsHeader">Add Item</h3>
@@ -73,8 +56,6 @@
             <hr>
             <h3 class="enterItemsHeader">Inventory Roster</h3>
             <br>
-
-
             <inventory-list :items="inventory">
             </inventory-list>
         </b-col>
@@ -82,25 +63,15 @@
 
             <br>
     </b-row>
-
-
-
-
-
     <b-row>
         <div class="col-6">
             <hr>
-
-
-
         </div>
         <div class="col-6">
             <hr>
             <h3 class="searchTableHeader"></h3>
             <search-list :items="searchinventory" class="my-search-inventory"></search-list>
         </div>
-
-
 
     </b-row>
 

@@ -60,20 +60,6 @@ Vue.component('ListItem', {
         },
     },
     methods: {
-        // popModal(){
-        //
-        //     console.log(this.item);
-        //
-        //     // this.testName = this.item.name;
-        //
-        //
-        //     $('#itemNameLabel').val(this.item.name);
-        //     $('#itemQty').val(this.item.qty);
-        //     $('#itemDescLabel').val(this.item.description);
-        //     $('#itemCategory').val(this.item.category);
-        // },
-
-
         deleteRecord(){
             app.inventory.splice(app.inventory.indexOf(this.item), 1);
         },
@@ -184,7 +170,27 @@ Vue.component('SearchList', {
         },
     },
     template: `<div class="my-search-inventory">
-                <h3>{{name}}</h3>
+                
+                <b-list-group>
+                <b-list-group-item variant="dark">
+
+            <b-row class="columnHeaders">
+                
+                <b-col cols="3">
+                    Name
+                </b-col>
+                <b-col cols="3">
+                    Category
+                </b-col>
+                <b-col cols="4">
+                    Description
+                </b-col>
+                <b-col cols="2">
+                    Qty
+                </b-col>
+            </b-row>
+                </b-list-group-item>
+            </b-list-group>
                 <b-list-group  class="list-group list-group-flush">
                     <search-list-item v-for="(item, i) in items" 
                     :item="item" 
@@ -272,17 +278,19 @@ Vue.component('EnterInfo', {
                         <input id="name"  type="text" class="form-control" v-model="newEntry.name" >
                     </div>
                     <div class="form-group">
-                        <label for="qty">Quantity</label>
-                        <input id="qty" type="number" class="form-control" size="3" v-model="newEntry.qty">
+                        <label for="category">Category</label>
+                        <input id="category" type="text" class="form-control" v-model="newEntry.category">
                     </div>
+                    
                     <div class="form-group">
                         <label for="desc">Description</label>
                         <input id="desc" type="text" class="form-control" v-model="newEntry.description">
                     </div>
                     <div class="form-group">
-                        <label for="category">Category</label>
-                        <input id="category" type="text" class="form-control" v-model="newEntry.category">
+                        <label for="qty">Quantity</label>
+                        <input id="qty" type="number" class="form-control" size="3" v-model="newEntry.qty">
                     </div>
+                    
                 </div>
                 <br>
                 <b-button variant="success" id="addContent" @click="addIt">Add +</b-button><br><br>
