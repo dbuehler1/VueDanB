@@ -91,7 +91,7 @@ Vue.component('MyModal', {
 
 
 
-            // this.item.name =
+            this.item.name = $('#itemNameLabel').val();
 
             this.item.qty = $('#itemQty').val();
             this.item.description = $('#itemDescLabel').val();
