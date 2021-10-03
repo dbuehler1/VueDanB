@@ -19,9 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07c4d663-486a-4f2c-a1f6-c8b348c990a1" name="Default Changelist" comment="Edit feature works and addItem is now updated and items now have incrementing ids as they are added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/app-components.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app-components.js" afterDir="false" />
+    <list default="true" id="07c4d663-486a-4f2c-a1f6-c8b348c990a1" name="Default Changelist" comment="Removed Empty Lines and Added Labels to Modal">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +68,7 @@
       <workItem from="1632800593804" duration="27559000" />
       <workItem from="1632895292184" duration="7156000" />
       <workItem from="1632940389369" duration="31508000" />
-      <workItem from="1633201172376" duration="31851000" />
+      <workItem from="1633201172376" duration="32574000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Version">
       <created>1633201364870</created>
@@ -113,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633288018562</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Removed Empty Lines and Added Labels to Modal">
+      <created>1633290925196</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1633290925196</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +143,9 @@
     <MESSAGE value="added name setting in applyTo" />
     <MESSAGE value="Revised elements to utilize BootstrapVue" />
     <MESSAGE value="Edit feature works and addItem is now updated and items now have incrementing ids as they are added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit feature works and addItem is now updated and items now have incrementing ids as they are added" />
+    <MESSAGE value="Removed Empty Lines" />
+    <MESSAGE value="Removed Empty Lines and Added Labels to Modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed Empty Lines and Added Labels to Modal" />
   </component>
   <component name="WindowStateProjectService">
     <state x="4539" y="1385" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1632687418677">
@@ -160,9 +168,10 @@
       <screen x="3840" y="1063" width="1920" height="1020" />
     </state>
     <state x="4643" y="1284" key="Github.UntrackedFilesDialog/3840.1063.1920.1020/0.0.2560.1400/5760.1236.1920.1040@3840.1063.1920.1020" timestamp="1632901904122" />
-    <state x="4392" y="1311" key="Vcs.Push.Dialog.v2" timestamp="1633288023428">
-      <screen x="3840" y="1063" width="1920" height="1020" />
+    <state x="736" y="340" key="Vcs.Push.Dialog.v2" timestamp="1633290927771">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="736" y="340" key="Vcs.Push.Dialog.v2/3840.1063.1920.1020/0.0.2560.1400/5760.1236.1920.1040@0.0.2560.1400" timestamp="1633290927771" />
     <state x="4392" y="1311" key="Vcs.Push.Dialog.v2/3840.1063.1920.1020/0.0.2560.1400/5760.1236.1920.1040@3840.1063.1920.1020" timestamp="1633288023428" />
     <state x="6312" y="1489" key="Vcs.Push.Dialog.v2/3840.1063.1920.1020/0.0.2560.1400/5760.1236.1920.1040@5760.1236.1920.1040" timestamp="1633222977416" />
     <state x="4456" y="1298" key="run.anything.popup" timestamp="1633159142969">

@@ -18,6 +18,26 @@ Vue.component('InventoryList', {
 <div class="my-current-inventory">
                 <h3>{{name}}</h3>
                 <b-list-group>
+                <b-list-group-item variant="dark">
+
+            <b-row class="columnHeaders">
+                <b-col cols="2"></b-col>
+                <b-col cols="3">
+                    Name
+                </b-col>
+                <b-col cols="2">
+                    Category
+                </b-col>
+                <b-col cols="4">
+                    Description
+                </b-col>
+                <b-col cols="1">
+                    Qty
+                </b-col>
+            </b-row>
+                </b-list-group-item>
+            </b-list-group>
+                <b-list-group>
                     <list-item v-for="(item, i) in items" 
                     :item="item"
                     :id="item.itemId"
