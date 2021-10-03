@@ -9,14 +9,21 @@ Vue.component('InventoryList', {
             required: true,
         },
     },
-    template: `<div class="my-current-inventory">
+    template: `
+<div class="my-current-inventory">
                 <h3>{{name}}</h3>
-                <ul class="list-group list-group-flush">
+                <b-list-group>
                     <list-item v-for="(item, i) in items" 
                     :item="item"
                     :key="item.name"
-                    ></list-item>
-                </ul>
+                    >
+                    
+</list-item>
+
+                </b-list-group>
+                
+                
+                
             </div>`,
 });
 Vue.component('ListItem', {
@@ -29,51 +36,60 @@ Vue.component('ListItem', {
         },
     },
     methods: {
-        popModal(){
-
-            console.log(this.item);
-
-            // this.testName = this.item.name;
-
-            $('#itemNameLabel').val(this.item.name);
-            $('#itemQty').val(this.item.qty);
-            $('#itemDescLabel').val(this.item.description);
-            $('#itemCategory').val(this.item.category);
-        },
+        // popModal(){
+        //
+        //     console.log(this.item);
+        //
+        //     // this.testName = this.item.name;
+        //
+        //
+        //     $('#itemNameLabel').val(this.item.name);
+        //     $('#itemQty').val(this.item.qty);
+        //     $('#itemDescLabel').val(this.item.description);
+        //     $('#itemCategory').val(this.item.category);
+        // },
 
 
         deleteRecord(){
             app.inventory.splice(app.inventory.indexOf(this.item), 1);
         },
+
     },
 
     template: `            
-            <div class="itemsTable row">
-            <my-modal :item="this.item"></my-modal>
-            <div class="col-2">
-                <b-button variant="success" type="button" data-toggle="modal" @click="popModal" data-target="#changeItemModal" title="Add Item">
+            <b-list-group-item>
+            <my-modal :item="item"></my-modal>
+            <b-row>
+            
+
+            
+            <b-col cols="2">
+            
+            
+                <b-button variant="success" v-b-modal.modal-1>
                     <i class="far fa-edit"></i>
                 </b-button>
                 <b-button variant="danger" @click="deleteRecord" type="button" >
                     <i class="fas fa-trash-alt"></i>
                 </b-button>
                 
-            </div>
-            <div  class="col-3">
+            </b-col>
+            <b-col  cols="3">
                 {{ item.name }}
-            </div>
-            <div class="col-2">
+            </b-col>
+            <b-col cols="2">
             {{ item.category }}
-            </div>
-            <div class="col-4">
+            </b-col>
+            <b-col cols="4">
             {{ item.description }}
-            </div>
-            <div class="col-1">
+            </b-col>
+            <b-col cols="1">
             {{ item.qty }}
-            </div>
+            </b-col>
             
             <hr>
-            </div>`
+            </b-row>
+            </b-list-group-item>`
 })
 
 Vue.component('MyModal', {
@@ -93,47 +109,69 @@ Vue.component('MyModal', {
 
             this.item.name = $('#itemNameLabel').val();
 
+
             this.item.qty = $('#itemQty').val();
             this.item.description = $('#itemDescLabel').val();
             this.item.category = $('#itemCategory').val();
             console.log(app.inventory);
         },
+        hideModal() {
+            this.$refs['my-modal'].hide()
+        },
     },
 
 
-    template: `<div class="modal fade" id="changeItemModal" tabindex="-1" role="dialog" aria-labelledby="editItemModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <form>
-                <div class="modal-content">
-                    <div class="modal-header">
+    template: `<b-modal ref="my-modal" hide-footer id="modal-1">
+        
+            <b-form>
+                
+                    
                         <h5 class="modal-title" id="editItemModal">Edit Item</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <b-button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <label for="itemNameLabel">Item Name</label>
-                        <input id="itemNameLabel" type="text" class="form-control">
+                        </b-button>
+                    
+                    
+<!--                        <label for="itemNameLabel">Item Name</label>-->
+<!--                        <input id="itemNameLabel" type="text" class="form-control">-->
+                        
+                            
+                            <b-form-textarea
+                                id="itemNameLabel"
+                                v-model="item.name"
+                            ></b-form-textarea>
+                            <b-form-textarea
+                                id="itemQty"
+                                v-model="item.qty"
+                            ></b-form-textarea>
+                            <b-form-textarea
+                                id="itemDescLabel"
+                                v-model="item.description"
+                            ></b-form-textarea>
+                            <b-form-textarea
+                                id="itemCategory"
+                                v-model="item.category"
+                            ></b-form-textarea>
                         
 
-                        <label for="itemQty">Item Qty</label>
-                        <input id="itemQty" type="text" class="form-control">
+<!--                        <label for="itemQty">Item Qty</label>-->
+<!--                        <input id="itemQty" type="text" class="form-control">-->
 
-                        <label for="itemDescLabel">Item Description</label>
-                        <input id="itemDescLabel" type="text" class="form-control">
+<!--                        <label for="itemDescLabel">Item Description</label>-->
+<!--                        <input id="itemDescLabel" type="text" class="form-control">-->
 
-                        <label for="itemCategory">Item Category</label>
-                        <input id="itemCategory" type="text" class="form-control">
+<!--                        <label for="itemCategory">Item Category</label>-->
+<!--                        <input id="itemCategory" type="text" class="form-control">-->
 
-                    </div>
+                    
                     <div class="modal-footer">
-                        <b-button variant="danger" type="button" data-dismiss="modal">Close</b-button>
+                        <b-button  variant="outline-danger" block @click="hideModal">Close Me</b-button>
                         <b-button variant="success" type="button" @click="applyTo()" data-dismiss="modal">Apply</b-button>
                     </div>
-                </div>
-            </form>
-        </div>
-    </div>`
+                
+            </b-form>
+        
+    </b-modal>`
 }),
 
 

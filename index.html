@@ -63,35 +63,38 @@
 
 
 
-        <div class="col-6"><hr>
+        <b-col cols="6"><hr>
             <h3 class="enterItemsHeader">Add Item</h3>
             <enter-info :items="inventory" :new-entry="newItem"></enter-info>
-            <br><br><br></div>
+            </b-col>
 
-        <div class="col-6">
+        <b-col cols="6">
             <hr>
             <h3 class="enterItemsHeader">Inventory Roster</h3>
-            <div class="itemsTable row">
-                <div class="col-3">
+            <b-row>
+                <b-col cols="2"></b-col>
+                <b-col cols="3">
                     Name
-                </div>
-                <div class="col-3">
+                </b-col>
+                <b-col cols="2">
                     Category
-                </div>
-                <div class="col-4">
+                </b-col>
+                <b-col cols="4">
                     Description
-                </div>
-                <div class="col-2">
+                </b-col>
+                <b-col cols="1">
                     Qty
-                </div>
-
-            </div>
-            <hr>
+                </b-col>
+            </b-row>
+            <br>
             <inventory-list :items="inventory">
             </inventory-list>
+        </b-col>
+            <hr>
+
             <br>
-        </div>
     </b-row>
+
 
 
 

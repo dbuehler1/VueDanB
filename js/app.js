@@ -9,6 +9,7 @@ const app = new Vue({
                 qty: 1,
                 category: ''
             },
+
             inventory: [
                 {name: 'IPhone', qty: 1, description: ' Mobile Apple Product', category: 'Device'},
                 {name: 'Doritos', qty: 10, description: 'Nacho Cheese', category: 'Snacks'},
@@ -22,6 +23,7 @@ const app = new Vue({
 
             ],
             searchinventory: [],
+
         }
     },
     methods: {
