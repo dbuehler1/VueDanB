@@ -111,4 +111,21 @@ hr {
   border-radius: 10px;
 }
 
+.viewItemInfo {
+  padding: 1rem;
+  border-radius: 15pt;
+  background-color: #3e444a;
+}
+.viewItemInfo label {
+  font-size: 20pt;
+  color: #17a2b8;
+  font-weight: bold;
+}
+.viewItemInfo span {
+  border-radius: 10pt;
+  padding: 4pt;
+  background-color: white;
+  color: black;
+}
+
 /*# sourceMappingURL=myStyles.css.map */

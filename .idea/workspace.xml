@@ -19,10 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07c4d663-486a-4f2c-a1f6-c8b348c990a1" name="Default Changelist" comment="Styling Changes - Moved Tables headers to InventoryList Component.  Table Headers now aligned properly">
+    <list default="true" id="07c4d663-486a-4f2c-a1f6-c8b348c990a1" name="Default Changelist" comment="Line Cleanup and some re-arranging">
+      <change afterPath="$PROJECT_DIR$/js/app-models.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/app-components.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app-components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/myStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/scss/myStyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/myStyles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/scss/myStyles.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/myStyles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/myStyles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +55,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/bootstrapvue-demo-starter" />
+    <property name="last_opened_file_path" value="D:/vue-compoents-all-examples" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -70,7 +75,17 @@
       <workItem from="1632800593804" duration="27559000" />
       <workItem from="1632895292184" duration="7156000" />
       <workItem from="1632940389369" duration="31508000" />
-      <workItem from="1633201172376" duration="33561000" />
+      <workItem from="1633201172376" duration="34197000" />
+      <workItem from="1633329426688" duration="911000" />
+      <workItem from="1633372244975" duration="157000" />
+      <workItem from="1633372471248" duration="22000" />
+      <workItem from="1633380066845" duration="1929000" />
+      <workItem from="1633544675170" duration="59000" />
+      <workItem from="1633549407381" duration="708000" />
+      <workItem from="1634143542070" duration="6470000" />
+      <workItem from="1634235340234" duration="21490000" />
+      <workItem from="1634260378715" duration="34000" />
+      <workItem from="1634322429319" duration="1087000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Version">
       <created>1633201364870</created>
@@ -128,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633291996948</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Line Cleanup and some re-arranging">
+      <created>1633292762510</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1633292762510</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +166,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated Version" />
@@ -155,7 +178,8 @@
     <MESSAGE value="Removed Empty Lines" />
     <MESSAGE value="Removed Empty Lines and Added Labels to Modal" />
     <MESSAGE value="Styling Changes - Moved Tables headers to InventoryList Component.  Table Headers now aligned properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Styling Changes - Moved Tables headers to InventoryList Component.  Table Headers now aligned properly" />
+    <MESSAGE value="Line Cleanup and some re-arranging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Line Cleanup and some re-arranging" />
   </component>
   <component name="WindowStateProjectService">
     <state x="4539" y="1385" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1632687418677">
@@ -166,10 +190,11 @@
       <screen x="5760" y="1236" width="1920" height="1040" />
     </state>
     <state x="6389" y="1534" key="EditFileWatcherDialog/3840.1063.1920.1020/5760.1236.1920.1040/0.0.2560.1400@5760.1236.1920.1040" timestamp="1632697862711" />
-    <state x="1068" y="419" key="FileChooserDialogImpl" timestamp="1632769246589">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1424" y="564" key="FileChooserDialogImpl" timestamp="1634143574492">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1068" y="419" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1632769246589" />
+    <state x="1068" y="419" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1633372490108" />
+    <state x="1424" y="564" key="FileChooserDialogImpl/3840.1063.1920.1020/0.0.2560.1400/5760.1236.1920.1040@0.0.2560.1400" timestamp="1634143574492" />
     <state x="4678" y="1481" key="Github.ShareDialog" timestamp="1632901896171">
       <screen x="3840" y="1063" width="1920" height="1020" />
     </state>
@@ -178,10 +203,10 @@
       <screen x="3840" y="1063" width="1920" height="1020" />
     </state>
     <state x="4643" y="1284" key="Github.UntrackedFilesDialog/3840.1063.1920.1020/0.0.2560.1400/5760.1236.1920.1040@3840.1063.1920.1020" timestamp="1632901904122" />
-    <state x="736" y="340" key="Vcs.Push.Dialog.v2" timestamp="1633292000828">
+    <state x="736" y="340" key="Vcs.Push.Dialog.v2" timestamp="1633292770994">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="736" y="340" key="Vcs.Push.Dialog.v2/3840.1063.1920.1020/0.0.2560.1400/5760.1236.1920.1040@0.0.2560.1400" timestamp="1633292000828" />
+    <state x="736" y="340" key="Vcs.Push.Dialog.v2/3840.1063.1920.1020/0.0.2560.1400/5760.1236.1920.1040@0.0.2560.1400" timestamp="1633292770994" />
     <state x="4392" y="1311" key="Vcs.Push.Dialog.v2/3840.1063.1920.1020/0.0.2560.1400/5760.1236.1920.1040@3840.1063.1920.1020" timestamp="1633288023428" />
     <state x="6312" y="1489" key="Vcs.Push.Dialog.v2/3840.1063.1920.1020/0.0.2560.1400/5760.1236.1920.1040@5760.1236.1920.1040" timestamp="1633222977416" />
     <state x="4456" y="1298" key="run.anything.popup" timestamp="1633159142969">

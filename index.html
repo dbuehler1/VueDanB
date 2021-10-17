@@ -21,61 +21,19 @@
 
 <br>
 <div id="app" class="container-fluid col-10">
-
-    <b-navbar id="titleBar" toggleable="lg" type="dark" variant="info">
-        <b-navbar-brand href="#"><h3>Inventory Manager</h3></b-navbar-brand>
-
-        <b-collapse id="nav-collapse" is-nav>
-            <!-- Right aligned nav items -->
-            <b-navbar-nav class="ml-auto">
-                <b-nav-form>
-                    <div>
-                        <select id="searchBy" class="custom-select" aria-label="Default select example">
-                            <option selected>Search by</option>
-                            <option value="1">Name</option>
-                            <option value="2">Description</option>
-                            <option value="3">Category</option>
-                        </select>
-                    </div>
-
-                    <b-form-input id="searchBox" size="m" class="mr-sm-2 p-3" placeholder="Search"></b-form-input>
-                    <b-button size="m" class="my-2 my-sm-0" type="button" @click="search">Search</b-button>
-                </b-nav-form>
-            </b-navbar-nav>
-        </b-collapse>
-    </b-navbar>
-
+    <search-bar :display-list="inventory"></search-bar>
     <b-row>
-        <b-col cols="6"><hr>
-
+        <b-col cols="3"><hr>
             <h3 class="enterItemsHeader">Add Item</h3>
             <enter-info :items="inventory" :new-entry="newItem"></enter-info>
-            </b-col>
-
-        <b-col cols="6">
-            <hr>
-            <h3 class="enterItemsHeader">Inventory Roster</h3>
-            <br>
-            <inventory-list :items="inventory">
-            </inventory-list>
         </b-col>
+        <b-col cols="9">
             <hr>
-
-            <br>
+            <h3 class="enterItemsHeader">Inventory Roster</h3><br>
+            <inventory-list :items="inventory"></inventory-list>
+        </b-col>
+            <hr><br>
     </b-row>
-    <b-row>
-        <div class="col-6">
-            <hr>
-        </div>
-        <div class="col-6">
-            <hr>
-            <h3 class="searchTableHeader"></h3>
-            <search-list :items="searchinventory" class="my-search-inventory"></search-list>
-        </div>
-
-    </b-row>
-
-
 </div>
 
 
@@ -88,6 +46,7 @@
 <script src="//unpkg.com/bootstrap-vue@2.x/dist/bootstrap-vue.js"></script>
 <script src="//unpkg.com/bootstrap-vue@2.x/dist/bootstrap-vue-icons.min.js"></script>
 <script src="js/app-components.js"></script>
+<script src="js/app-models.js"></script>
 <script src="js/app.js"></script>
 
 </body>

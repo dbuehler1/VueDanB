@@ -104,3 +104,19 @@ hr{
   background-color: #c6c8ca;
   border-radius: 10px;
 }
+.viewItemInfo{
+  padding: 1rem;
+  border-radius: 15pt;
+  background-color: #3e444a;
+  label {
+    font-size: 20pt;
+    color: #17a2b8;
+    font-weight: bold;
+  }
+  span {
+    border-radius: 10pt;
+    padding: 4pt;
+    background-color: white;
+    color: black;
+  }
+}
